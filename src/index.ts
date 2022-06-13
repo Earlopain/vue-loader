@@ -278,10 +278,10 @@ export default function loader(
 
   // finalize
   if (!propsToAttach.length) {
-    code += `\n\nconst __exports__ = script;`
+    code += `\n\nvar __exports__ = script;`
   } else {
     code += `\n\nimport exportComponent from ${exportHelperPath}`
-    code += `\nconst __exports__ = /*#__PURE__*/exportComponent(script, [${propsToAttach
+    code += `\nvar __exports__ = /*#__PURE__*/exportComponent(script, [${propsToAttach
       .map(([key, val]) => `['${key}',${val}]`)
       .join(',')}])`
   }
