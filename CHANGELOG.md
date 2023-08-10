@@ -1,3 +1,117 @@
+## [17.2.2](https://github.com/vuejs/vue-loader/compare/v17.2.1...v17.2.2) (2023-06-02)
+
+
+### Bug Fixes
+
+* windows path for `experiments.css` ([#2049](https://github.com/vuejs/vue-loader/issues/2049)) ([f3f45df](https://github.com/vuejs/vue-loader/commit/f3f45df925bcd80307232e7410ead355f87953d3))
+
+
+
+## [17.2.1](https://github.com/vuejs/vue-loader/compare/v17.1.2...v17.2.1) (2023-06-01)
+
+
+### Features
+
+* A new `experimentalInlineMatchResource` option (webpack 5 only), which leverages webpack 5's inline match resource feature and works well with the [`experiments.css`](https://webpack.js.org/configuration/experiments/#experimentscss) feature ([#2046](https://github.com/vuejs/vue-loader/issues/2046)) ([3149f6d](https://github.com/vuejs/vue-loader/commit/3149f6d69c2f456bdcfa23acc0da93473a93a764))
+
+
+Note: v17.2.0 was released by accident, it has the same content as v17.1.2, therefore not included in the changelog.
+
+
+## [17.1.2](https://github.com/vuejs/vue-loader/compare/v17.1.1...v17.1.2) (2023-05-29)
+
+
+### Bug Fixes
+
+* keep build stable when run in a different path ([#2040](https://github.com/vuejs/vue-loader/issues/2040)) ([a81dc0f](https://github.com/vuejs/vue-loader/commit/a81dc0f573d216eefa13b0275f3fc147bf3e2ef3))
+* properly close the watcher after tests ([40b93b9](https://github.com/vuejs/vue-loader/commit/40b93b9c2722e85a000de62e3eb8bc02facafd10))
+
+
+
+## [17.1.1](https://github.com/vuejs/vue-loader/compare/v17.1.0...v17.1.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* support propsDestructure and defineModel options ([6269698](https://github.com/vuejs/vue-loader/commit/6269698f9fda37f0e3849db3e8b8e67ad1862f57))
+
+
+
+# [17.1.0](https://github.com/vuejs/vue-loader/compare/v17.1.0-beta.0...v17.1.0) (2023-04-26)
+
+
+### Bug Fixes
+
+* do not throw when `Rule.layer` ([#2000](https://github.com/vuejs/vue-loader/issues/2000)) ([ef589df](https://github.com/vuejs/vue-loader/commit/ef589df2956506a5a7bbc050c476501d32dd8469))
+
+
+
+# [17.1.0-beta.0](https://github.com/vuejs/vue-loader/compare/v17.0.1...v17.1.0-beta.0) (2023-04-19)
+
+
+### Bug Fixes
+
+* reference project compiler, fixes [#2031](https://github.com/vuejs/vue-loader/issues/2031) ([#2038](https://github.com/vuejs/vue-loader/issues/2038)) ([cc6fa9e](https://github.com/vuejs/vue-loader/commit/cc6fa9ebf85972a08fc8bbc359b0093b15790745))
+
+
+### Features
+
+* support 3.3 imported types hmr ([bbd98fc](https://github.com/vuejs/vue-loader/commit/bbd98fc8bdc17fcbffb456a5ffe772bc184f22e4))
+
+
+
+## [17.0.1](https://github.com/vuejs/vue-loader/compare/v17.0.0...v17.0.1) (2022-10-28)
+
+
+### Bug Fixes
+
+* add `vue` and `@vue/compiler-sfc` to optional peerDependencies ([df0ded5](https://github.com/vuejs/vue-loader/commit/df0ded5356864b9923da8f89ff33db1ae6c2402f)), closes [#1944](https://github.com/vuejs/vue-loader/issues/1944)
+* merge custom queries rather than appending ([#1911](https://github.com/vuejs/vue-loader/issues/1911)) ([9e4249a](https://github.com/vuejs/vue-loader/commit/9e4249a548ceb04ead46fff9b68e9b2676b4c692))
+
+
+
+## [17.0.1](https://github.com/vuejs/vue-loader/compare/v16.8.3...v17.0.1) (2022-10-28)
+
+
+### Bug Fixes
+
+* add `vue` and `@vue/compiler-sfc` to optional peerDependencies ([df0ded5](https://github.com/vuejs/vue-loader/commit/df0ded5356864b9923da8f89ff33db1ae6c2402f)), closes [#1944](https://github.com/vuejs/vue-loader/issues/1944)
+* merge custom queries rather than appending ([#1911](https://github.com/vuejs/vue-loader/issues/1911)) ([9e4249a](https://github.com/vuejs/vue-loader/commit/9e4249a548ceb04ead46fff9b68e9b2676b4c692))
+
+
+
+# [17.0.0](https://github.com/vuejs/vue-loader/compare/v16.8.3...v17.0.0) (2021-12-12)
+
+
+### Features
+
+* support `reactivityTransform` option ([e07490e](https://github.com/vuejs/vue-loader/commit/e07490ec8b8ac9e00050251d6f0e697fb1f3bf3c))
+
+
+### BREAKING CHANGES
+
+* remove `refSugar` option, require `vue@^3.2.13`
+
+
+
+## [16.8.3](https://github.com/vuejs/vue-loader/compare/v16.8.2...v16.8.3) (2021-11-04)
+
+
+### Bug Fixes
+
+* HMR not working correctly with vue-class-component components ([#1897](https://github.com/vuejs/vue-loader/issues/1897)) ([76b1448](https://github.com/vuejs/vue-loader/commit/76b1448eb227c42e1791a691a86782b7a8cacfc0))
+
+
+
+## [16.8.3](https://github.com/vuejs/vue-loader/compare/v16.8.2...v16.8.3) (2021-11-04)
+
+
+### Bug Fixes
+
+* HMR not working correctly with vue-class-component components ([#1897](https://github.com/vuejs/vue-loader/issues/1897)) ([76b1448](https://github.com/vuejs/vue-loader/commit/76b1448eb227c42e1791a691a86782b7a8cacfc0))
+
+
+
 ## [16.8.2](https://github.com/vuejs/vue-loader/compare/v16.8.1...v16.8.2) (2021-10-26)
 
 
