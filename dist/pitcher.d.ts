@@ -1,4 +1,4 @@
-import webpack = require('webpack')
-declare const pitcher: webpack.loader.Loader
-export declare const pitch: () => string | undefined
-export default pitcher
+import type { LoaderDefinitionFunction } from 'webpack';
+declare const pitcher: LoaderDefinitionFunction;
+export declare const pitch: () => string | undefined;
+export default pitcher;

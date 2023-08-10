@@ -1,3 +1,3 @@
-import webpack = require('webpack')
-declare const StylePostLoader: webpack.loader.Loader
-export default StylePostLoader
+import type { LoaderDefinitionFunction } from 'webpack';
+declare const StylePostLoader: LoaderDefinitionFunction;
+export default StylePostLoader;

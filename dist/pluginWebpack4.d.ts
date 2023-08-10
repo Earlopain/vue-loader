@@ -1,6 +1,6 @@
-import webpack = require('webpack')
-declare class VueLoaderPlugin implements webpack.Plugin {
-  static NS: string
-  apply(compiler: webpack.Compiler): void
+import type { Compiler } from 'webpack';
+declare class VueLoaderPlugin {
+    static NS: string;
+    apply(compiler: Compiler): void;
 }
-export default VueLoaderPlugin
+export default VueLoaderPlugin;

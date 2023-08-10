@@ -1,3 +1,3 @@
-import webpack = require('webpack')
-declare const TemplateLoader: webpack.loader.Loader
-export default TemplateLoader
+import type { LoaderDefinitionFunction } from 'webpack';
+declare const TemplateLoader: LoaderDefinitionFunction;
+export default TemplateLoader;

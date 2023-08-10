@@ -1,4 +1,1 @@
-export declare function genHotReloadCode(
-  id: string,
-  templateRequest: string | undefined
-): string
+export declare function genHotReloadCode(id: string, templateRequest: string | undefined): string;
