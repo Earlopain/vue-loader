@@ -1,11 +1,7 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -28,8 +24,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VueLoaderPlugin = void 0;
 const path = __importStar(require("path"));
+const crypto = __importStar(require("crypto"));
 const qs = __importStar(require("querystring"));
-const hash = require("hash-sum");
 const compiler_1 = require("./compiler");
 const select_1 = require("./select");
 const hotReload_1 = require("./hotReload");
@@ -43,6 +39,9 @@ const util_1 = require("./util");
 let errorEmitted = false;
 const { parse } = compiler_1.compiler;
 const exportHelperPath = require.resolve('./exportHelper');
+function hash(text) {
+    return crypto.createHash('sha256').update(text).digest('hex').substring(0, 8);
+}
 function loader(source) {
     var _a;
     const loaderContext = this;
@@ -68,6 +67,7 @@ function loader(source) {
     const { descriptor, errors } = parse(source, {
         filename,
         sourceMap,
+        templateParseOptions: options.compilerOptions,
     });
     const asCustomElement = typeof options.customElement === 'boolean'
         ? options.customElement

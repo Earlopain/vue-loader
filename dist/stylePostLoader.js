@@ -1,11 +1,7 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -31,6 +27,11 @@ const { compileStyle } = compiler_1.compiler;
 // for any <style scoped> selection requests initiated from within vue files.
 const StylePostLoader = function (source, inMap) {
     const query = qs.parse(this.resourceQuery.slice(1));
+    // skip normal CSS files
+    if (!('vue' in query) || query.type !== 'style' || !query.id) {
+        this.callback(null, source, inMap);
+        return;
+    }
     const { code, map, errors } = compileStyle({
         source: source,
         filename: this.resourcePath,

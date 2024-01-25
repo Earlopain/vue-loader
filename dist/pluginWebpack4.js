@@ -1,11 +1,7 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -80,7 +76,7 @@ class VueLoaderPlugin {
                 const parsed = qs.parse(query.slice(1));
                 return parsed.vue != null && parsed.type === 'template';
             },
-            options: vueLoaderOptions,
+            options: Object.assign({ ident: vueLoaderUse.ident }, vueLoaderOptions),
         };
         // for each rule that matches plain .js/.ts files, also create a clone and
         // match it against the compiled template code inside *.vue files, so that

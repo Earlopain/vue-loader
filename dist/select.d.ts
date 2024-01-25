@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import type { LoaderContext } from 'webpack';
 import type { SFCDescriptor } from 'vue/compiler-sfc';
 import type { ParsedUrlQuery } from 'querystring';

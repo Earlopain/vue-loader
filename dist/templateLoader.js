@@ -1,11 +1,7 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -45,7 +41,7 @@ const TemplateLoader = function (source, inMap) {
     const isProd = loaderContext.mode === 'production' || process.env.NODE_ENV === 'production';
     const query = qs.parse(loaderContext.resourceQuery.slice(1));
     const scopeId = query.id;
-    const descriptor = (0, descriptorCache_1.getDescriptor)(loaderContext.resourcePath);
+    const descriptor = (0, descriptorCache_1.getDescriptor)(loaderContext.resourcePath, options.compilerOptions);
     const script = (0, resolveScript_1.resolveScript)(descriptor, query.id, options, loaderContext);
     let templateCompiler;
     if (typeof options.compiler === 'string') {
@@ -56,6 +52,9 @@ const TemplateLoader = function (source, inMap) {
     }
     const compiled = compileTemplate({
         source,
+        ast: descriptor.template && !descriptor.template.lang
+            ? descriptor.template.ast
+            : undefined,
         filename: loaderContext.resourcePath,
         inMap,
         id: scopeId,

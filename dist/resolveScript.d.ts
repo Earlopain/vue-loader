@@ -1,7 +1,7 @@
 import type { LoaderContext } from 'webpack';
-import type { SFCDescriptor } from 'vue/compiler-sfc';
+import type { SFCDescriptor, SFCScriptBlock } from 'vue/compiler-sfc';
 import type { VueLoaderOptions } from 'src';
-export declare const clientCache: WeakMap<SFCDescriptor, any>;
+export declare const clientCache: WeakMap<SFCDescriptor, SFCScriptBlock | null>;
 export declare const typeDepToSFCMap: Map<string, Set<string>>;
 /**
  * inline template mode can only be enabled if:
@@ -10,4 +10,4 @@ export declare const typeDepToSFCMap: Map<string, Set<string>>;
  * - template is not using src
  */
 export declare function canInlineTemplate(descriptor: SFCDescriptor, isProd: boolean): boolean;
-export declare function resolveScript(descriptor: SFCDescriptor, scopeId: string, options: VueLoaderOptions, loaderContext: LoaderContext<VueLoaderOptions>): any;
+export declare function resolveScript(descriptor: SFCDescriptor, scopeId: string, options: VueLoaderOptions, loaderContext: LoaderContext<VueLoaderOptions>): SFCScriptBlock | null;
