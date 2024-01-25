@@ -1,3 +1,52 @@
+## [17.4.2](https://github.com/vuejs/vue-loader/compare/v17.4.1...v17.4.2) (2023-12-30)
+
+
+### Bug Fixes
+
+* pass compilerOptions to sfc parse & re-enable AST reuse ([d2a2e05](https://github.com/vuejs/vue-loader/commit/d2a2e051c3d985d1ae6bb468749b24543631b482))
+
+
+
+## [17.4.1](https://github.com/vuejs/vue-loader/compare/v17.4.0...v17.4.1) (2023-12-30)
+
+
+### Bug Fixes
+
+* (temporarily) disable template ast reuse ([31b03af](https://github.com/vuejs/vue-loader/commit/31b03af121edbe70337f538b1def95acbef4d0f1))
+
+
+
+# [17.4.0](https://github.com/vuejs/vue-loader/compare/v17.3.1...v17.4.0) (2023-12-25)
+
+
+### Features
+
+* leverage ast reuse in 3.4 ([479835f](https://github.com/vuejs/vue-loader/commit/479835fe751691a39c62cda12bffeef9e6830443))
+
+
+
+## [17.3.1](https://github.com/vuejs/vue-loader/compare/v17.3.0...v17.3.1) (2023-10-31)
+
+
+### Bug Fixes
+
+* do not skip style post loader for v-bind() in CSS ([d7071bb](https://github.com/vuejs/vue-loader/commit/d7071bbdeb45518c053bdae8eb7de52fc598adc6)), closes [#2061](https://github.com/vuejs/vue-loader/issues/2061)
+
+
+# [17.3.0](https://github.com/vuejs/vue-loader/compare/v17.2.2...v17.3.0) (2023-10-07)
+
+
+### Bug Fixes
+
+* re-use ident of vue rule for template compiler, fixes [#2029](https://github.com/vuejs/vue-loader/issues/2029) ([#2030](https://github.com/vuejs/vue-loader/issues/2030)) ([b50fa56](https://github.com/vuejs/vue-loader/commit/b50fa5665f2cbc1c0b8e18f65dd3adf1dfe848dc))
+
+
+### Features
+
+* skip normal css files without scoped flag in stylePostLoader ([#2053](https://github.com/vuejs/vue-loader/issues/2053)) ([98782e7](https://github.com/vuejs/vue-loader/commit/98782e794fadca83b600b047b55aa6f0c230cc25))
+
+
+
 ## [17.2.2](https://github.com/vuejs/vue-loader/compare/v17.2.1...v17.2.2) (2023-06-02)
 
 

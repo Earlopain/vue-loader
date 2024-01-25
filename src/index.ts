@@ -1,8 +1,7 @@
 import type { LoaderContext } from 'webpack'
 import * as path from 'path'
+import * as crypto from 'crypto'
 import * as qs from 'querystring'
-
-import hash = require('hash-sum')
 
 import { compiler } from './compiler'
 import type {
@@ -66,6 +65,10 @@ let errorEmitted = false
 const { parse } = compiler
 const exportHelperPath = require.resolve('./exportHelper')
 
+function hash(text: string): string {
+  return crypto.createHash('sha256').update(text).digest('hex').substring(0, 8)
+}
+
 export default function loader(
   this: LoaderContext<VueLoaderOptions>,
   source: string
@@ -116,6 +119,7 @@ export default function loader(
   const { descriptor, errors } = parse(source, {
     filename,
     sourceMap,
+    templateParseOptions: options.compilerOptions,
   })
 
   const asCustomElement =
@@ -363,7 +367,9 @@ export default function loader(
   if (!propsToAttach.length) {
     code += `\n\nvar __exports__ = script;`
   } else {
-    code += `\n\nimport exportComponent from ${stringifyRequest(exportHelperPath)}`
+    code += `\n\nimport exportComponent from ${stringifyRequest(
+      exportHelperPath
+    )}`
     code += `\nvar __exports__ = /*#__PURE__*/exportComponent(script, [${propsToAttach
       .map(([key, val]) => `['${key}',${val}]`)
       .join(',')}])`
